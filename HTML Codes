@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>McLaren P1 Showcase</title>
+  <style>
+    body {
+      background-color: orange;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+    h1, h2, h3 {
+      color: white;
+    }
+    img {
+      max-width: 80%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+    }
+    ul {
+      text-align: left;
+      display: inline-block;
+      color: white;
+      font-size: 16px;
+    }
+
+   
+    .model-section {
+      margin-top: 40px;
+      background-color: #fff;
+      color: #000;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      text-align: left;
+      max-width: 500px;
+    }
+
+    .model-section h2 {
+      text-align: center;
+      color: orange;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0;
+      font-size: 16px;
+    }
+
+    .image-container img {
+      display: none;
+      width: 300px;
+      height: auto;
+      margin-top: 10px;
+      border-radius: 8px;
+    }
+
+    .description-container div {
+      display: none;
+      font-size: 15px;
+      margin-top: 10px;
+      color: #333;
+      background-color: #f7f7f7;
+      padding: 10px;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  
+  <h1>McLAREN P1<sup>TM</sup></h1>
+  <img src="https://mclaren.scene7.com/is/image/mclaren/1597-McLarenP1trade:crop-16x9?wid=1786&hei=1005" alt="McLaren P1" />
+  <h2><b>McLaren P1: The Hybrid Hypercar Beast</b></h2>
+  <ul> 
+    <li><strong>Manufacturer:</strong> McLaren Automotive</li>
+    <li><strong>Production Years:</strong> 2013-2015</li>
+    <li><strong>Engine:</strong> 3.8L twin-turbo V8 hybrid</li>
+    <li><strong>Power Output:</strong> 903 hp (combined)</li>
+    <li><strong>0-60 mph:</strong> 2.8 seconds</li>
+    <li><strong>Top Speed:</strong> 217 mph (350 km/h)</li>
+  </ul>
+
+  <h3><i><b>Power & Performance</b></i></h3>
+  <ul>
+    <li><strong>Hybrid System:</strong> Combines a petrol engine with an electric motor</li>
+    <li><strong>Battery:</strong> 4.7 kWh lithium-ion battery</li>
+    <li><strong>Transmission:</strong> 7-speed dual-clutch automatic</li>
+    <li><strong>Weight:</strong> Approximately 1,490 kg (3,286 lbs)</li>
+    <li><strong>Drivetrain:</strong> Rear-wheel drive</li>
+  </ul>
+
+  
+  <div class="model-section">
+    <h2>Select Model Year:</h2>
+
+    <label><input type="checkbox" name="img-select" onclick="showImage(1)"> 2013-2015</label>
+    <label><input type="checkbox" name="img-select" onclick="showImage(2)"> 2015-2016</label>
+    <label><input type="checkbox" name="img-select" onclick="showImage(3)"> 2016-2017</label>
+    <label><input type="checkbox" name="img-select" onclick="showImage(4)"> From 2018</label>
+
+    <div class="image-container">
+      <img id="img1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSa5Fr_oeh0pwEXTHetVOf8J1dAAK5GCAKurQ&s" alt="Model 1">
+      <img id="img2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTaS-Vp8kmVieY_8FAwAMctMDbBUVBltwwsgw&s" alt="Model 2">
+      <img id="img3" src="https://i.pinimg.com/736x/f3/4b/ce/f34bce0d5843591a63dad2aa12a68b11.jpg" alt="Model 3">
+      <img id="img4" src="https://www.thesupercarblog.com/wp-content/uploads/2024/11/McLaren-P1-Spider-by-Lanzante-Gulf-Livery-12-1000x600.jpg" alt="Model 4">
+    </div>
+
+    <div class="description-container">
+      <div id="desc1">McLaren P1 by MSO: This model marked the debut of the P1, showcasing revolutionary hybrid technology and stunning aerodynamic design.</div>
+      <div id="desc2">McLaren P1 GTR: Minor tweaks in performance and color options were introduced, improving handling and comfort for track days.</div>
+      <div id="desc3">McLaren P1 LM: Advanced updates in software and ECU mapping gave this generation better efficiency and throttle response.</div>
+      <div id="desc4">McLaren P1 Spider (2022): Final batches included limited edition variants with carbon fiber upgrades and enhanced braking systems.</div>
+    </div>
+  </div>
+
+  <script>
+    function showImage(num) {
+      const checkboxes = document.getElementsByName('img-select');
+      checkboxes.forEach((cb, i) => {
+        if (i !== num - 1) cb.checked = false;
+      });
+
+      for (let i = 1; i <= 4; i++) {
+        document.getElementById('img' + i).style.display = 'none';
+        document.getElementById('desc' + i).style.display = 'none';
+      }
+
+      if (checkboxes[num - 1].checked) {
+        document.getElementById('img' + num).style.display = 'block';
+        document.getElementById('desc' + num).style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
+
